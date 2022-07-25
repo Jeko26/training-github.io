@@ -132,16 +132,18 @@ li, ul {
     color: #3A79FF;
     font-family: 'Quicksand', sans-serif;
 }
-.contacts__brand * path ,
+
+.contacts__brand * path,
 .header__ico * path {
     fill: #B6BAC7;
-transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
 }
-.contacts__brand:hover * path ,
+
+.contacts__brand:hover * path,
 .header__ico:hover * path {
     fill: #6188FF;
     cursor: pointer;
-    transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
 }
 
 /* секция full-screen */
@@ -173,7 +175,7 @@ transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
     margin: 0;
     display: flex;
     width: 100%;
-    padding: 65px 0 ;
+    padding: 65px 0;
     justify-content: space-between;
 }
 
@@ -193,13 +195,13 @@ transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
     background-size: 60%;
 }
 
-.pam__small-header{
+.pam__small-header {
     padding: 0;
     margin: 0;
     margin-bottom: 27px;
 }
 
-.pam__medium-header{
+.pam__medium-header {
     padding: 0;
     margin: 0;
     margin-bottom: 27px;
@@ -210,7 +212,8 @@ transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
     text-align: left;
     margin-bottom: 60px;
 }
-.pam__btn:first-child{
+
+.pam__btn:first-child {
     border-right: none;
 }
 
@@ -223,23 +226,149 @@ transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 5s;
 .btn:hover {
     background-color: #4C85FF;
     color: #FFFFFF;
-    transition: background-color cubic-bezier(0.165, 0.84, 0.44, 1) 5s,
-    color cubic-bezier(0.165, 0.84, 0.44, 1) 1s
-    
-    ;
+    transition: background-color cubic-bezier(0.165, 0.84, 0.44, 1) 3s,
+        color cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
 
-@media (min-width: 1700px){
+@media (min-width: 1700px) {
     .pam {
-   
-    background-size: 40%;
-    /* до адаптива */
+
+        background-size: 40%;
+        /* до адаптива */
     }
 }
-@media (max-width: 1350px){
+
+@media (max-width: 1350px) {
     .pam {
-   
-    background-size: 40%;
+
+        background-size: 40%;
+    }
+
 }
 
+/* секция about */
+
+.about {
+    background-image: url(../image/clouds.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about__container {
+    justify-content: space-around;
+    margin-top: 170px;
+
+}
+
+.about__headers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 90px;
+}
+
+.about__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.about__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card__name {
+    font-family: 'Open Sans';
+    color: rgba(64, 116, 248, 1);
+    margin-top: 33px;
+    margin-bottom: 25px;
+}
+
+.card__descr {
+    height: 250px;
+}
+
+.about__btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.about__list-item {
+    padding: 0 70px;
+}
+
+.about__btn {
+    color: rgba(58, 121, 255, 1);
+    background-color: #D2E1FF;
+    font-family: 'Quicksand';
+    margin-bottom: 170px;
+}
+
+.about__btn:hover {
+    color: rgba(212, 63, 63, 1);
+    background-color: #FFD7D7;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 2s;
+}
+
+/* cекция stats */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(104, 136, 255, 1);
+    height: 320px;
+}
+
+.stats__1-half {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+    padding-right: 90px;
+    font-family: 'Quicksand';
+    justify-content: center;
+}
+
+.stats__2-half {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 90px;
+    align-items: flex-start;
+    background-color: rgba(233, 239, 255, 1);
+    color: rgba(94, 128, 255, 1);
+    font-family: 'Quicksand';
+    justify-content: center;
+}
+
+/* cекция blog */
+
+.blog {
+    background: #F5F8FF;
+}
+
+.blog__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog__container-heading {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.blog__card {
+    display: flex;
+    background: white;
 }
