@@ -1,0 +1,603 @@
+/* временные стили для наглядности блоков */
+/* div,
+ul {
+	border: 3px rgba(255, 166, 0, 0.433) solid;
+}
+a {
+	border: 2px rgba(0, 89, 255, 0.554) solid;
+}
+li,
+p,
+h1,
+h2,
+h3 {
+	border: 2px rgba(21, 255, 0, 0.554) solid;
+} */
+/* конец временных стилей */
+
+/* спозиционируй лицо абсолютно - к нижней грани карточки  */
+
+/* стили для адаптива */
+header,
+footer,
+section {
+	overflow: hidden;
+}
+.burger--desable {
+	display: none;
+	width: 0;
+}
+
+@media (max-width: 1320px) {
+	/* сделать поплотнее хидер ( без переносов) */
+	.header__group:nth-child(3) {
+		width: 40%;
+	}
+	/* в секции Read about our app сделать контент карточек пополотнее */
+	.about__list-item {
+		padding: 90px 15px;
+	}
+	.card__name {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 1.5rem;
+	}
+	.card__container {
+		margin-bottom: 1rem;
+	}
+	/* в секции start reading blog -  поработать с картинкой  */
+	.long-card__img-box * {
+		width: 100%;
+	}
+	.long-card__img-box {
+		width: 150%;
+		display: flex;
+	}
+
+	/* секцию quotes переверстать под flex-direction: column; и добавить отступов и тд */
+	.quotes__container {
+		flex-direction: column;
+	}
+
+	.quotes__content-box {
+		margin-bottom: 20px;
+		margin-right: 0;
+	}
+	.quotes__container {
+		padding-top: 50px;
+	}
+	/* в секции пам картинку с позиционировать как минимум - background-position: center right; - можно еще с размером
+	 повозиться  */
+	.pam {
+		background-position: center right;
+		background-size: 60%;
+	}
+
+	/* в секции ask questions сделать маргин от коробки с текстом меньше( примероно 5% поставить или 2 rem+-) */
+	.help__container {
+		padding: 0;
+	}
+
+	.help__content-box {
+		padding-left: 100px;
+	}
+	/*  ну форма ввода поплыла - на флексах починить надо  */
+	.sign__fotm {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.sign__email {
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+	}
+	/* в футере просто в столбик сделаешь все и прижмешь к левой стороне 
+        (align-items: flex-start; flex-direction: column;)
+        и от группы ссылок отступ вниз можно увеличить*/
+	.footer__container {
+		align-items: flex-start;
+		flex-direction: column;
+		padding: 80px 7%;
+		min-height: 300px;
+	}
+	.footer__group {
+		margin-bottom: 10px;
+	}
+	.footer__links {
+		margin-right: 5rem;
+	}
+	.full-screen {
+		padding-top: 40px;
+	}
+}
+@media (max-width: 1000px) {
+	/* в хидере расположи строчку с иконками и ссылками в столбик 
+        ( чтоб было 2 строки) причем верхнюю нужно будет прижать вправо  */
+	.header__container {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+	.header__group:nth-child(3) {
+		width: 100%;
+	}
+	.header__group--links .header__links {
+		justify-content: flex-end;
+	}
+	/*  секцию full-screen в высоту уменьши - где то до 450px */
+	.full-screen {
+		height: 450px;
+	}
+	/*  у класса main-small-heading - нижний отступ можно уменгьшить в 2 раза */
+	.main-small-heading {
+		margin-bottom: 8px;
+	}
+	/*  у класса .main-medium-heading  - нижний отступ можно уменьшить до 15 -18 px */
+	.main-medium-heading {
+		margin-bottom: 16px;
+	}
+	/* в секции с брэндами надо что то придумать - расположить в столбик тут плохое решение 
+        ниже один из вариантов решения */
+	.contacts__brand:not(:nth-last-child(-n + 2)) {
+		margin-bottom: 2rem;
+	}
+
+	.contacts__brand {
+		width: 200px;
+	}
+	.contacts__brands {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	/* в секции pam убираешь картинку + у самой области с текстом убираешь ограничения по ширине */
+	.pam {
+		background-image: none;
+	}
+	.pam__content-block {
+		width: 100%;
+	}
+	/* у секции about(read app) - убери ограничение на высоту  */
+	.about {
+		height: inherit;
+	}
+	/* !Вообще ограничение на высоту у секций допустим ставить только у полноформатных секциях (те что без контейнера) */
+	/* в этой секции список карточек сделай в столбик */
+	.about__list {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 5rem;
+	}
+	/* у самих этих карточек сделай падинги меньше раза в 2+-  */
+	.about__list-item {
+		padding: 40px 10px;
+	}
+	/* в них у тебя лежит блок обреточный - ему дай флекс и элементы в нем расположи в строчку */
+	.about__card {
+		display: flex;
+		flex-direction: row;
+		/* position: relative; */
+	}
+	.about__list-item {
+		position: relative;
+	}
+	.card__name {
+		min-width: 175px;
+
+		display: block;
+		position: absolute;
+		top: 15%;
+
+		right: 35%;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.card__container {
+		margin-right: 10px;
+	}
+	/* и списку карточек дай отступ нижний +-5rem - на глаз */
+
+	/*  думаю классу .btn можно дать {
+        padding: 10px 15px;
+        min-width: 180px;
+        min-height: 60px;
+    } */
+	.btn {
+		padding: 10px 15px;
+		min-width: 180px;
+		min-height: 60px;
+	}
+	/* я бы вообще классу about__frame дал бы отступы - padding: 10rem 0; 
+        - или даже всем секциям чтобы потом менять быстро */
+	.about__fraim {
+		padding: 8rem 0;
+	}
+	/* в секции stats - просто падинги уменьшить и там подогнать по красоте все) */
+	.stats__1-half {
+		padding-right: 50px;
+	}
+	.stats__2-half {
+		padding-left: 50px;
+	}
+	/* в следующей секции - long-card__img-box{display: none}  - и там с падингами разберешься*/
+	.long-card__img-box {
+		display: none;
+	}
+	.blog__card {
+		padding: 0 30px;
+	}
+	.long-card__heading {
+		margin-bottom: 10px;
+	}
+	.long-card__descr {
+		margin-bottom: 15px;
+	}
+	/* ниже по секциям думаю все встанет +-, ну мб прийдетсе ширину где то 100% указать - думаю не сложно там */
+	.sign__text-box {
+		margin-right: 40px;
+		width: 50%;
+	}
+}
+@media (max-width: 800px) {
+	/* классу контейнер падинги уменьшить до 5-8% */
+	.container {
+		padding: 0 5%;
+	}
+
+	/* header__group--links - display none */
+	.header__group--links {
+		display: none;
+		margin: 0 auto;
+	}
+	/* burgrgerу дать flex и сверстать его  */
+	.burger {
+		display: flex;
+		flex-direction: column;
+		min-height: 60px;
+		max-height: 60px;
+		width: 60px;
+		margin: 0;
+		padding: 0;
+		justify-content: space-evenly;
+		z-index: 5;
+	}
+	.header__links {
+		justify-content: space-evenly;
+	}
+	.burger--cross {
+		position: relative;
+	}
+	.burger .burger__line {
+		transform: rotate(0deg);
+		opacity: 100;
+		transition: transform ease 0.4s;
+	}
+	.burger .burger__line:nth-child(2) {
+		transition: all ease 0.7s;
+	}
+	.burger--cross .burger__line {
+		background-color: blue;
+	}
+	.burger--cross .burger__line:nth-child(3) {
+		position: absolute;
+		top: 50%;
+		transform: rotate(45deg);
+		transform-origin: center;
+		transition: all ease 0.4s;
+	}
+	.burger--cross .burger__line:nth-child(1) {
+		position: absolute;
+		top: 50%;
+		transform: rotate(-45deg);
+		transform-origin: center;
+		transition: all ease 0.4s;
+	}
+	.burger--cross .burger__line:nth-child(2) {
+		/* display: none; */
+		/* visibility: hidden; */
+		transition: all ease 0.1s;
+		opacity: 0;
+	}
+
+	.burger__line {
+		width: 100%;
+		height: 3px;
+		background-color: black;
+	}
+
+	.header__group--burger {
+		transform: translateY(-450px);
+		transition: transform ease 0.5s, visibility ease 90s;
+		/* visibility: hidden; */
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: white;
+		width: 100% !important;
+		max-height: 700px;
+		min-height: 500px;
+	}
+
+	.burger--open {
+		display: flex;
+	}
+	/* .header__group {
+		transform: translateY(-300px);
+		transition: all ease 1s;
+	} */
+	.burger--open {
+		visibility: visible;
+		transform: translateY(2px);
+		transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+		width: 100% !important;
+		padding-top: 20px;
+		max-height: 700px;
+		min-height: 500px;
+		border-radius: 10%;
+		border: 2px dashed red;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+
+		backdrop-filter: blur(5px);
+	}
+	.header__group--burger > * {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.header__logo {
+		display: none;
+	}
+
+	.header__links--burger {
+		width: inherit;
+		justify-content: space-evenly;
+	}
+
+	.header__link:not(:last-child) {
+		margin: 0;
+		width: 200px;
+		text-align: start;
+		font-size: 48px;
+	}
+	.header__link {
+		margin: 0;
+		width: 200px;
+		text-align: start;
+		font-size: 48px;
+	}
+	/* так же бургеру дать z-index больше 1 - к примеру 5 */
+	/* сверстать выпадающий список на старых классах */
+	/* .header__group:nth-child(2) {
+    width: 100%; 
+    position: absolute;
+    left: 0;
+	} */
+	/* помимо этих стилей там расположишь красиво внутри все */
+	/* у тебя я заготовил классы для бургера 
+     burger--open - открытый список - его отсутствие - закрыытый
+     burger--cross - для анимации самого бургера*/
+
+	/* примерно следущие стили надо применить  */
+
+	/* .burger--open {
+		width: 100% ;
+		max-height: 400px;
+		position: absolute;
+		left: 0;
+	}
+	.burger--open > * {
+		display: flex;
+		flex-direction: column;
+	} */
+
+	/* секцию контактных брендов я бы скрыл  - в столбик ее распологать - думаю не удобно для пользования */
+	.contacts {
+		display: none;
+	}
+	/* все блоки которые тут ограничены по ширене - ВСЕМ делай ширину 100% */
+
+	/* при желании можешь немного увелисчить всем шрифты */
+
+	/* причесать хидер и все что поехало  */
+	.pam,
+	.about__fraim,
+	.quotes,
+	.help,
+	.footer {
+		padding: 100px 0;
+	}
+	.footer {
+		background-color: darkblue;
+	}
+	/* в секции stats расположить все в столбик и с фоном разобраться) */
+	/* везде сделать все  терпимым на вид */
+	.footer__container {
+		min-height: 100px;
+	}
+
+	.stats {
+		flex-direction: column;
+		align-items: normal;
+	}
+	.stats__1-half,
+	.stats__2-half {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+@media (max-width: 640px) {
+	/* отступы у всех секций с верху и низу сделать меньше */
+	.pam,
+	.about__fraim,
+	.quotes,
+	.help,
+	.footer {
+		padding: 50px 0;
+	}
+	/* секцию read about app или display none - или убрать картиники и компактно в столбик все карточки */
+	.card__container {
+		display: none;
+	}
+	.card__name {
+		display: inline-block;
+		position: inherit;
+	}
+	.about__list-item {
+		padding: 15px 10px;
+	}
+	.about__list {
+		margin-bottom: 2rem;
+	}
+	.main-medium-heading {
+		font-size: 36px;
+	}
+	.blog__card {
+		margin-bottom: 80px;
+	}
+	.sign__text-box,
+	.sign__contact {
+		width: 100%;
+		margin: 0;
+	}
+	.sign__box {
+		flex-direction: column;
+	}
+	.footer__links {
+		width: 100%;
+		flex-wrap: wrap;
+		margin: 0;
+	}
+	.footer__link {
+		min-width: 115px;
+		margin: 0;
+	}
+	/* .footer__link:not(:last-child) {
+		margin: 0;
+	} */
+	/* ну и причесать все */
+	.footer__group:first-child {
+		width: 100%;
+	}
+	.footer__group:nth-child(2) {
+		width: 100%;
+	}
+	.help__content-box {
+		padding: 0;
+	}
+	.help__header-box {
+		margin-bottom: 30px;
+	}
+}
+@media (max-width: 440px) {
+	/* ну  причесать все */
+	body .header__link:nth-child(1n) {
+		font-size: 36px;
+	}
+	.pam__btn-block {
+		flex-direction: column;
+		height: inherit;
+		margin: 0;
+		width: 100%;
+		max-width: inherit;
+	}
+	.simple-text {
+		margin-bottom: 30px;
+	}
+	.about__card {
+		flex-direction: column;
+	}
+	.about__list-item {
+		padding: 10px 30px;
+	}
+	.about__btn-container {
+		flex-direction: column;
+		margin: 0;
+		width: 100%;
+		padding: 0 30px;
+	}
+	.about__btn--red {
+		margin: 0;
+		margin-bottom: 15px;
+	}
+	.stats__ico {
+		display: none;
+	}
+	.stats__1-half,
+	.stats__2-half {
+		flex-direction: row;
+		margin: 0;
+		padding-left: 30px;
+	}
+	.stats__numbers {
+		margin: 0;
+		margin-right: 10px;
+	}
+	.stats__2-half {
+		padding-right: 0;
+	}
+	.blog__container-heading {
+		padding-top: 50px;
+	}
+	.blog__card {
+		padding-left: 0;
+		padding-right: 0;
+		margin-bottom: 40px;
+	}
+	.long-card__btn-container {
+		flex-direction: column;
+	}
+	.long-card__btn {
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	.long-card__descr {
+		width: 100%;
+	}
+	.quotes__container {
+		max-height: inherit;
+		height: inherit;
+	}
+	.quotes__text-box {
+		height: inherit;
+	}
+	.quotes__card {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+	.quotes__img {
+		margin-bottom: 10px;
+	}
+	.quotes__content-box {
+		margin-bottom: 0;
+	}
+	.help__descr {
+		text-align: left;
+		margin-bottom: 15px;
+	}
+	.get__btn-box {
+		max-width: 100%;
+		flex-direction: column;
+		margin-bottom: 40px;
+	}
+	.btn--white {
+		margin-bottom: 10px;
+	}
+	.sign__header {
+		line-height: 40px;
+	}
+	.sign__descr {
+		margin-bottom: 15px;
+	}
+}
+@media (max-width: 350px) {
+	/* все что не в столбик - все в столбик сделать */
+	/* отступы у контейнера до 3-5% сократить */
+	/* все отступы от блоков и тд уменьшить еще раза в 2 */
+	.footer__container {
+		min-height: 200px;
+	}
+}
+
+/* твой сайт должен выглядеть терпимо или даже хорошо от 300px до 3000px  - если диаполон больше то хорошо */
