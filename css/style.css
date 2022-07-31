@@ -6,6 +6,11 @@
 /* font-family: 'Quicksand', sans-serif;
 font-family: 'Roboto', sans-serif; */
 /* общие стили */
+
+html, body {
+    overflow-x: hidden
+}
+
 .container {
     padding: 0 10%;
     display: flex;
@@ -161,6 +166,9 @@ li, ul {
 
 .full-screen {
     background: url(../image/hero\ image.png) no-repeat;
+    width: auto;
+    max-width: 100%;
+
     background-size: cover;
     height: 570px;
 }
@@ -171,7 +179,7 @@ li, ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    max-width: 1200px;
     padding-top: 95px;
     text-align: center;
 }
@@ -190,6 +198,7 @@ li, ul {
     padding: 65px 0;
     justify-content: space-between;
 }
+
 
 /* секция pam */
 
@@ -242,20 +251,54 @@ li, ul {
         color cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
 }
 
-@media (min-width: 1700px) {
+/* @media (min-width: 1700px) {
     .pam {
 
         background-size: 40%;
         /* до адаптива */
-    }
-}
+/* }
+} */
 
-@media (max-width: 1350px) {
+/* @media (max-width: 1350px) {
     .pam {
 
         background-size: 40%;
     }
 
+} */
+
+@media (max-width:900px) {
+    .pam__descr {
+        width: 500px;
+    }
+}
+
+@media (max-width:540px) {
+    .pam__descr {
+        width: 300px;
+    }
+
+    .pam__medium-header {
+        width: 300px;
+    }
+}
+
+@media (max-width:340px) {
+    .pam__descr {
+        width: 200px;
+    }
+
+    .pam__medium-header {
+        width: 200px;
+    }
+
+    .pam__btn-block {
+        flex-direction: column;
+    }
+
+    .pam__btn {
+        border-right: 1px solid #D1D1E4;
+    }
 }
 
 /* секция about */
@@ -268,6 +311,7 @@ li, ul {
 
 .about__container {
     justify-content: center;
+    max-width: 1200px;
 }
 
 
@@ -300,6 +344,7 @@ li, ul {
     padding: 30px 0;
     font-family: 'Open Sans';
     color: rgba(64, 116, 248, 1);
+    text-align: center;
 }
 
 .about__btn-container {
@@ -331,6 +376,52 @@ li, ul {
     background: #D2E1FF;
     color: rgba(58, 121, 255, 1);
     transition: cubic-bezier(0.165, 0.84, 0.44, 1) 2s;
+}
+
+@media (max-width:1200px) {
+    .about__container {
+        max-width: 970px;
+    }
+}
+
+@media (max-width:992px) {
+    .about__container {
+        max-width: 750px;
+    }
+}
+
+@media (max-width:767px) {
+    .about__container {
+        max-width: none;
+    }
+}
+
+@media (max-width:660px) {
+    .about__list-item {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width:450px) {
+    .about__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__container {
+        height: 500px;
+    }
+
+    .about__list-item {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .card__name {
+        padding: 5px 0;
+        margin: 0;
+    }
 }
 
 /* cекция stats */
@@ -386,6 +477,19 @@ li, ul {
 }
 
 
+@media (max-width: 800px) {
+    .stats__1-half {
+        padding-right: 10px;
+        text-align: right;
+    }
+}
+
+@media (max-width: 800px) {
+    .stats__2-half {
+        padding-left: 10px;
+        text-align: left;
+    }
+}
 
 /* cекция blog */
 
@@ -455,6 +559,39 @@ li, ul {
     padding: 5px 30px;
 }
 
+@media (max-width:1200px) {
+    .blog__container {
+        max-width: 970px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width:900px) {
+    .blog__card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .long-card__content-box {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .blog__container {
+        height: 950px;
+    }
+}
+
+@media (max-width:580px) {
+    .long-card__img-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 /* секция quotes */
 
 .quotes {
@@ -506,6 +643,33 @@ li, ul {
     text-align: left;
 }
 
+@media (max-width:1211px) {
+    .quotes__container {
+        flex-direction: column;
+    }
+
+    .quotes__content-box {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width:900px) {
+    .quotes__container {
+        justify-content: center;
+        height: 800px;
+    }
+
+    .quotes__big-header {
+        text-align: left;
+    }
+}
+
+@media (max-width:470px) {
+    .quotes__content-box {
+        margin: 0;
+    }
+}
+
 /* секция help */
 
 .help {
@@ -541,6 +705,27 @@ li, ul {
     margin-bottom: 15px;
     display: flex;
     justify-content: flex-start;
+}
+
+@media (max-width:1200px) {
+    .help__container {
+        padding: 0;
+    }
+
+    .help__content-box {
+        padding-left: 50px;
+    }
+}
+
+@media (max-width:480px) {
+    .help__content-box {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .help__descr {
+        text-align: left;
+    }
 }
 
 /* секция get */
@@ -593,6 +778,14 @@ li, ul {
 .start {
     font-weight: 600;
 }
+
+@media (max-width:1100px) {
+    .get__descr {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 
 /* секция sign */
 .sign {
@@ -657,6 +850,45 @@ li, ul {
         0 0 92px #0fa,
         0 0 102px #0fa,
         0 0 151px #0fa;
+}
+
+@media (max-width:1100px) {
+    .sign__text-box {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width:1000px) {
+    .sign__container {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width:870px) {
+    .sign__container {
+        flex-direction: column;
+        padding-left: 40px;
+    }
+
+
+    .sign__fotm {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width:620px) {
+    .sign__box {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .sign__contact {
+        height: 200px;
+    }
 }
 
 /* секция footer */
@@ -747,23 +979,3 @@ li, ul {
     color: white;
     transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 4s;
 }
-
-
-
-/* @media (max-width: 1200px) {
-    .container {
-        max-width: 970px;
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        max-width: 750px;
-    }
-}
-
-@media (max-width: 767px) {
-    .container {
-        max-width: none;
-    }
-} */
