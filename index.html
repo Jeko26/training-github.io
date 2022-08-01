@@ -21,13 +21,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
   </head>
   <body>
     <header class="header">
       <div class="container header__container">
-        <div class="header__group">
+        <ul class="header__burger burger burger--desable">
+          <li class="burger__line"></li>
+          <li class="burger__line"></li>
+          <li class="burger__line"></li>
+        </ul>
+        <div class="header__group header__group--burger">
           <a href="#" class="header__logo"><img src="image/logo.png" /></a>
-          <ul class="header__links">
+
+          <ul class="header__links header__links--burger">
             <li class="header__link">Home</li>
             <li class="header__link">Blog</li>
             <li class="header__link">Features</li>
@@ -35,7 +42,7 @@
             <li class="header__link">Documentation</li>
           </ul>
         </div>
-        <div class="header__group">
+        <div class="header__group header__group--links">
           <ul class="header__links">
             <li class="header__ico">
               <svg
@@ -528,5 +535,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
